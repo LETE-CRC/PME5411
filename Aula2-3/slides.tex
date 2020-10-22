@@ -491,7 +491,7 @@ version={4.0},
 
 
 \begin{frame}{Equação de transporte p/ $ -\rho \m{u'_i u'_j} $}
-	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovInst} e multiplicando por $ u_j $ e lembrando a continuidade $ \ddxp{\rho u_i}{i} = 0 $ , temos para o termo advectivo
+	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovInst} e multiplicando por $ \m{u}_i $ e $ u_j $ e somando as duas, lembrando a continuidade $ \ddxp{\rho u_i}{i} = 0 $ , temos para o termo advectivo
 	\begin{align*}
 	u_j \ddxp{\rho u_i u_k}{k} + u_i \ddxp{\rho u_j u_k}{k} \rightarrow 
 	&\;\;\;\; u_j \left[ u_i \underbrace{\ddxp{\rho u_k}{k}}_{=0} + \rho u_k\ddx{u_i}{k}\right] \\
@@ -547,7 +547,7 @@ version={4.0},
 \end{frame}
 
 \begin{frame}{Equação de transporte p/ $ -\rho \m{u'_i u'_j} $}
-	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovMean} e multiplicando por $ \m{u}_j $ resulta
+	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovMean} e multiplicando por $ \m{u}_i $ e por $ \m{u}_j $ e então somando as duas equações resultantes temos
 	\begin{equation}\label{eq:RSMmean}
 	\ddxp{\rho \m{u}_i \m{u}_j \m{u}_k}{k} = - \m{u}_j \ddx{\m{p}}{i} - \m{u}_i \ddx{\m{p}}{j} + \m{u}_j \ddxp{\m{\uptau}_{ik} - \rho\m{u'_iu'_k}}{k} + \m{u}_i \ddx{}{k}(\m{\uptau}_{jk} - \overbrace{\rho\m{u'_ju'_k}}^{\incircle{A'}})
 	\end{equation}
