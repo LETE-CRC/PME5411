@@ -537,7 +537,7 @@ version={4.0},
 	- \m{\m{u}_i \ddx{\m{\uptau}_{jk}}{k}} \red{- \m{\m{u}_i \ddx{\uptau'_{jk}}{k}} - \m{u'_i \ddx{\m{\uptau}_{jk}}{k}}} - \m{u'_i \ddx{\uptau'_{jk}}{k}}
 	\end{align*}
 	\begin{align}\label{eq:RSMinst}
-	\ddx{ }{k}[ \rho \m{u}_i \m{u}_j \m{u}_k + \overbrace{\rho \m{u}_i \m{u'_j u'_k}}^{\incircle{A}} + \rho \m{u}_j \m{u'_i u'_k} + \rho \m{u}_k \m{u'_i u'_j} + \rho \m{u'_i u'_j u'_k} ] \nonumber \\
+	\ddx{ }{k}[ \rho \m{u}_i \m{u}_j \m{u}_k + \overbrace{\rho \m{u}_i \m{u'_j u'_k}}^{\incircle{A}} + \rho \overbrace{\m{u}_j \m{u'_i u'_k}}^{\incircle{B}} + \rho \m{u}_k \m{u'_i u'_j} + \rho \m{u'_i u'_j u'_k} ] \nonumber \\
 	=
 	- \m{u}_j \ddx{\m{p}}{i} - \m{u'_j \ddx{p'}{i}}
 	- \m{u}_i \ddx{\m{p}}{j} - \m{u'_i \ddx{p'}{j}}
@@ -549,10 +549,10 @@ version={4.0},
 \begin{frame}{Equação de transporte p/ $ -\rho \m{u'_i u'_j} $}
 	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovMean} e multiplicando por $ \m{u}_i $ e por $ \m{u}_j $ e então somando as duas equações resultantes temos
 	\begin{equation}\label{eq:RSMmean}
-	\ddxp{\rho \m{u}_i \m{u}_j \m{u}_k}{k} = - \m{u}_j \ddx{\m{p}}{i} - \m{u}_i \ddx{\m{p}}{j} + \m{u}_j \ddxp{\m{\uptau}_{ik} - \rho\m{u'_iu'_k}}{k} + \m{u}_i \ddx{}{k}(\m{\uptau}_{jk} - \overbrace{\rho\m{u'_ju'_k}}^{\incircle{A'}})
+	\ddxp{\rho \m{u}_i \m{u}_j \m{u}_k}{k} = - \m{u}_j \ddx{\m{p}}{i} - \m{u}_i \ddx{\m{p}}{j} + \m{u}_j \ddx{}{k}(\m{\uptau}_{ik} - \overbrace{\rho\m{u'_iu'_k}}^{\incircle{B'}}) + \m{u}_i \ddx{}{k}(\m{\uptau}_{jk} - \overbrace{\rho\m{u'_ju'_k}}^{\incircle{A'}})
 	\end{equation}
 	
-	Subtraindo \ref{eq:RSMmean} de \ref{eq:RSMinst}, sendo $\incircle{A} = \incircle{A'} - \rho \m{u'_ju'_k}\ddx{\m{u}_i}{k}$
+	Subtraindo \ref{eq:RSMmean} de \ref{eq:RSMinst}, sendo $\incircle{A} = \incircle{A'} - \rho \m{u'_ju'_k}\ddx{\m{u}_i}{k}$, e similar $\incircle{B} $ e $ \incircle{B'} $
 	
 	\begin{block}{Equação de transporte de $ \m{u'_i u'_j} $}
 		\begin{align}\label{eq:uiuj}
