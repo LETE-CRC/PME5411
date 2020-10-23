@@ -491,7 +491,7 @@ version={4.0},
 
 
 \begin{frame}{Equação de transporte p/ $ -\rho \m{u'_i u'_j} $}
-	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovInst} e multiplicando por $ \m{u}_i $ e $ u_j $ e somando as duas, lembrando a continuidade $ \ddxp{\rho u_i}{i} = 0 $ , temos para o termo advectivo
+	Reescrevendo o indice repetido como $k$ na equação \ref{eq:qtdMovInst} e multiplicando por $ \m{u}_i $ e $ \m{u}_j $ e somando as duas, lembrando a continuidade $ \ddxp{\rho u_i}{i} = 0 $ , temos para o termo advectivo
 	\begin{align*}
 	u_j \ddxp{\rho u_i u_k}{k} + u_i \ddxp{\rho u_j u_k}{k} \rightarrow 
 	&\;\;\;\; u_j \left[ u_i \underbrace{\ddxp{\rho u_k}{k}}_{=0} + \rho u_k\ddx{u_i}{k}\right] \\
@@ -558,7 +558,7 @@ version={4.0},
 		\begin{align}\label{eq:uiuj}
 	\ddxp{\rho \m{u}_k \m{u'_i u'_j}}{k} = &- \ddxp{\rho \m{u'_iu'_ju'_k}}{k} - \m{u'_j\ddx{p'}{i}} - \m{u'_i\ddx{p'}{j}} \nonumber \\
 	&+ \m{u'_j\ddx{\uptau'_{ik}}{k}} + \m{u'_i\ddx{\uptau'_{jk}}{k}}
-	- \rho \m{u'_i u'_k} \ddx{\m{u}_i}{k} - \rho \m{u'_j u'_k} \ddx{\m{u}_i}{k} 
+	- \rho \m{u'_i u'_k} \ddx{\m{u}_i}{k} - \rho \m{u'_j u'_k} \ddx{\m{u}_j}{k} 
 	\end{align}
 	\end{block}
 		
@@ -583,7 +583,7 @@ version={4.0},
 		\item Termo de dissipação:
 	\end{enumerate}
 	\begin{equation*}
-	\mu \m{\ddx{u'_i}{k}\ddx{u'_i}{k}} = \varepsilon_{ik} = \dfrac{2}{3} \delta_{ik}\varepsilon
+	\mu \m{\ddx{u'_i}{k}\ddx{u'_j}{k}} = \varepsilon_{ik} = \dfrac{2}{3} \delta_{ik}\varepsilon
 	\end{equation*}
 	
 	
@@ -599,9 +599,23 @@ version={4.0},
 	&\rightarrow - \ddxp{\m{p' \delta_{ki} u'_j}}{k} + \m{p'\ddx{u'_j}{i}} - \ddxp{\m{p' \delta_{kj} u'_i}}{k} + \m{p'\ddx{u'_i}{j}} \\
 	&\rightarrow - \ddxp{\m{p' \delta_{ki} u'_j} + \m{p' \delta_{kj} u'_i}}{k} + \m{p'\left( \ddx{u'_j}{i} + \ddx{u'_i}{j} \right)}
 	\end{align*}
-	
-	A partir da equação \ref{eq:uiuj}, chegar na equação da energia cinética turbulenta $ K = \left( \dfrac{1}{2} \m{u'_i u'_i} \right) $.
 
+\end{frame}
+
+\begin{frame}{Equação de transporte p/ $ -\rho \m{u'_i u'_j} $}
+	Finalmente temos
+	
+	\begin{block}{Equação de transporte de $ \m{u'_i u'_j} $}
+		\begin{align}\label{eq:uiujfinal}
+		\ddxp{\rho \m{u}_k \m{u'_i u'_j}}{k} = &- \ddxp{\rho \m{u'_iu'_ju'_k}}{k} - \ddxp{\m{p' \delta_{ki} u'_j} + \m{p' \delta_{kj} u'_i}}{k} \nonumber \\
+		&+ \m{p'\left( \ddx{u'_j}{i} + \ddx{u'_i}{j} \right)} + \mu \left[ \ddxp{\ddx{(\m{u'_iu'_j})}{k}}{k} \right] \nonumber \\
+		&- \dfrac{2}{3} \delta_{ik}\varepsilon
+		- \rho \m{u'_i u'_k} \ddx{\m{u}_i}{k} - \rho \m{u'_j u'_k} \ddx{\m{u}_j}{k} 
+		\end{align}
+	\end{block}
+	
+	A partir da equação \ref{eq:uiujfinal}, chegar na equação da energia cinética turbulenta $ K = \left( \dfrac{1}{2} \m{u'_i u'_i} \right) $.
+	
 \end{frame}
 
 \begin{frame}[b]{Considerações finais}
